@@ -16,7 +16,7 @@ public class Glyph extends Drawable {
     public static final int WIFI = 0, BLUETOOTH = 1, AIRPLANE = 2, HOTSPOT = 3, SUN = 4,
             SPEAKER = 5, BELL = 6, LOCKROT = 7, MOON = 8, FLASH = 9, TIMER = 10, CALC = 11,
             CAMERA = 12, GEAR = 13, BATTERY = 14, CAST = 15, PLAY = 16, PAUSE = 17,
-            PREV = 18, NEXT = 19, SEARCH = 20;
+            PREV = 18, NEXT = 19, SEARCH = 20, PLUS = 21, HEADSET = 22;
 
     private final int type;
     private final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -209,6 +209,17 @@ public class Glyph extends Drawable {
                 fill();
                 c.drawPath(poly(12, 24, 48, 50, 12, 76), p);
                 c.drawPath(poly(50, 24, 86, 50, 50, 76), p);
+                break;
+            case PLUS:
+                line(9f);
+                c.drawLine(50, 20, 50, 80, p);
+                c.drawLine(20, 50, 80, 50, p);
+                break;
+            case HEADSET:
+                arc(c, 50, 52, 34, 180, 180);
+                fill();
+                c.drawRoundRect(new RectF(14, 50, 32, 84), 8, 8, p);
+                c.drawRoundRect(new RectF(68, 50, 86, 84), 8, 8, p);
                 break;
             case SEARCH:
                 line(9f);
